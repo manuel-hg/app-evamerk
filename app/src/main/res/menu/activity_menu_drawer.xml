@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/evamerc_home_icon"
+            android:textColor="#FFFFFF"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_captura"
+            android:icon="@drawable/evamerc_captura_icon"
+            android:textColor="#FFFFFF"
+            android:title="@string/menu_captura" />
+        <item
+            android:id="@+id/nav_comparacion"
+            android:icon="@drawable/evamerc_versus_icon"
+            android:textColor="#FFFFFF"
+            android:title="@string/menu_comparacion" />
+        <item
+            android:id="@+id/nav_salir"
+            android:icon="@drawable/evamerc_cerrar_icon"
+            android:textColor="#FFFFFF"
+            android:title="@string/menu_salir" />
+    </group>
+</menu>
+

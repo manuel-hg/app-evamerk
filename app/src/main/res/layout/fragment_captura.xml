@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:screenOrientation="portrait"
+    android:orientation="vertical"
+    tools:context=".ui.captura.CapturaFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#fff"
+        android:gravity="center_vertical">
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Selecciona la tienda"
+            android:background="#1f4c55"
+            android:textColor="#fff"
+            android:textSize="20dp"
+            android:textAlignment="center" />
+
+        <Spinner
+            android:id="@+id/lista_tiendas_C"
+            android:layout_width="fill_parent"
+            android:layout_height="23dp"
+            android:background="#F6F8F8"
+            android:paddingTop="10dp"
+            android:textColor="#fff"
+            tools:layout_editor_absoluteX="1dp"
+            tools:layout_editor_absoluteY="3dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp">
+
+            <!-- IMAGE TO REPLACE BARCODE SCAN BUTTON -->
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="fill_parent"
+                android:layout_height="195dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/evamerc_camera_icon"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/btnLeerCCodigo"
+                android:layout_width="fill_parent"
+                android:layout_height="195dp"
+                android:src="@drawable/evamerc_barras_full"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true" />
+
+            <TextView
+                android:id="@+id/tvResult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="150dp"
+                android:layout_marginBottom="0dp"
+                android:gravity="center"
+                android:background="#000"
+                android:textColor="#fff"
+                android:text="Activar escaner."
+                android:textSize="12dp"
+                tools:layout_editor_absoluteX="66dp"
+                tools:layout_editor_absoluteY="132dp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#f8f8f8"
+            android:elevation="20dp">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/border_line">
+
+
+
+                <!--Button
+                    android:id="@+id/btnLeerCodigo"
+                    android:layout_width="302dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:gravity="center"
+                    android:text="Escanear producto" /-->
+
+                <TextView
+                    android:id="@+id/tvProducto"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="Producto:"
+                    android:textSize="20dp"
+                    android:textColor="#1f4c55"/>
+
+                <TextView
+                    android:id="@+id/eCodigo"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:text="Codigo de Barras:"
+                    android:textColor="#469eb2"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/etCodigo"
+                    android:layout_width="124dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginBottom="10dp"
+                    android:ems="10"
+                    android:gravity="left"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:textColor="#469eb2"
+                    android:textSize="15dp" />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/rounded_borderless">
+
+                <TextView
+                    android:id="@+id/viewText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Inventario Inicial"
+                    android:textColor="@color/dark"
+                    android:textSize="15dp"
+                     />
+
+                <EditText
+                    android:id="@+id/edInvInicial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:hint="0"
+                    android:background="@null"
+                    android:layout_toLeftOf="@+id/img1"
+                    android:layout_marginRight="5dp"
+                    android:inputType="number"
+                    android:textSize="15dp"
+                    android:textColorHint="@color/dark" />
+
+                <ImageView
+                    android:id="@+id/img1"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentRight="true"
+                    android:scaleType="fitXY"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/evamerc_edit_icon" />
+
+            </RelativeLayout>
+
+            <!--EditText
+                android:id="@+id/editText"
+                android:layout_width="253dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:ems="10"
+                android:hint="Inventario Inicial"
+                android:textColorHint="@color/colorPrimary"
+                android:inputType="number"
+                android:paddingLeft="10dp"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/rounded_edittext" /-->
+
+            <RelativeLayout
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/rounded_borderless">
+
+                <TextView
+                    android:id="@+id/viewText2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Resurtido"
+                    android:textColor="@color/dark"
+                    android:textSize="15dp"
+                   />
+
+                <EditText
+                    android:id="@+id/edResurtido"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:hint="0"
+                    android:background="@null"
+                    android:layout_toLeftOf="@+id/img2"
+                    android:layout_marginRight="5dp"
+                    android:inputType="number"
+                    android:textSize="15dp"
+                    android:textColorHint="@color/dark" />
+
+                <ImageView
+                    android:id="@+id/img2"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentRight="true"
+                    android:scaleType="fitXY"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/evamerc_edit_icon" />
+
+            </RelativeLayout>
+
+            <!--EditText
+                android:id="@+id/editText2"
+                android:layout_width="253dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ems="10"
+                android:hint="Resurtido"
+                android:textColorHint="@color/colorPrimary"
+                android:inputType="number"
+                android:paddingLeft="10dp"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/rounded_edittext" /-->
+
+            <RelativeLayout
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/rounded_borderless">
+
+                <TextView
+                    android:id="@+id/viewText3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Inventario Final"
+                    android:textColor="@color/dark"
+                    android:textSize="15dp"
+                   />
+
+                <EditText
+                    android:id="@+id/edInvFinal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:hint="0"
+                    android:background="@null"
+                    android:layout_toLeftOf="@+id/img3"
+                    android:layout_marginRight="5dp"
+                    android:inputType="number"
+                    android:textSize="15dp"
+                    android:textColorHint="@color/dark" />
+
+                <ImageView
+                    android:id="@+id/img3"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentRight="true"
+                    android:scaleType="fitXY"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/evamerc_edit_icon" />
+
+            </RelativeLayout>
+
+            <!--EditText
+                android:id="@+id/editText3"
+                android:layout_width="254dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:ems="10"
+                android:hint="Inventario Final"
+                android:textColorHint="@color/colorPrimary"
+                android:inputType="number"
+                android:paddingLeft="10dp"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/rounded_edittext" /-->
+
+            <RelativeLayout
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/rounded_borderless">
+
+                <TextView
+                    android:id="@+id/viewText4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Ventas"
+                    android:textColor="@color/dark"
+                    android:textSize="15dp"
+                   />
+
+                <EditText
+                    android:id="@+id/edVentas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:hint="0"
+                    android:background="@null"
+                    android:layout_toLeftOf="@+id/img4"
+                    android:layout_marginRight="5dp"
+                    android:inputType="number"
+                    android:textSize="15dp"
+                    android:textColorHint="@color/dark" />
+
+                <ImageView
+                    android:id="@+id/img4"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentRight="true"
+                    android:scaleType="fitXY"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/evamerc_edit_icon" />
+
+            </RelativeLayout>
+
+            <!--EditText
+                android:id="@+id/editText4"
+                android:layout_width="254dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ems="10"
+                android:hint="Ventas"
+                android:textColorHint="@color/colorPrimary"
+                android:inputType="number"
+                android:paddingLeft="10dp"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/rounded_edittext" /-->
+
+            <RelativeLayout
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center"
+                android:background="@drawable/rounded_borderless">
+
+                <TextView
+                    android:id="@+id/viewText5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Precio"
+                    android:textColor="@color/dark"
+                    android:textSize="15dp"
+                     />
+
+                <EditText
+                    android:id="@+id/edPrecio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:hint="$0.00"
+                    android:background="@null"
+                    android:layout_toLeftOf="@+id/img5"
+                    android:layout_marginRight="5dp"
+                    android:inputType="numberDecimal"
+                    android:textSize="15dp"
+                    android:textColorHint="@color/dark" />
+
+                <ImageView
+                    android:id="@+id/img5"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentRight="true"
+                    android:scaleType="fitXY"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/evamerc_edit_icon" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="347dp"
+                android:layout_height="51dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_borderless"
+                android:paddingLeft="10dp"
+                android:paddingTop="2dp"
+                android:paddingRight="10dp"
+                android:paddingBottom="2dp">
+
+                <EditText
+                    android:id="@+id/Cmarca"
+                    android:layout_width="302dp"
+                    android:layout_height="49dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_toLeftOf="@+id/img6"
+                    android:hint="Comentarios"
+                    android:inputType="text"
+                    android:textColorHint="@color/dark"
+                    android:textSize="15dp" />
+
+                <ImageView
+                    android:id="@+id/img6"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/evamerc_comments_icon" />
+
+            </RelativeLayout>
+            <!--EditText
+                android:id="@+id/editText5"
+                android:layout_width="257dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ems="10"
+                android:hint="Precio"
+                android:textColorHint="@color/colorPrimary"
+                android:inputType="numberDecimal"
+                android:paddingLeft="10dp"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/rounded_edittext" /-->
+
+            <!--EditText
+                android:id="@+id/editText6"
+                android:layout_width="259dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:ems="10"
+                android:hint="Comentarios"
+                android:inputType="textPersonName"
+                android:paddingLeft="10dp"
+                android:paddingBottom="2dp"
+                android:paddingTop="2dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/rounded_edittext" /-->
+
+            <!--Button
+                android:id="@+id/capture"
+                android:layout_width="288dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="Tomar evidencia" /-->
+
+            <RelativeLayout
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:layout_marginTop="20dp">
+
+                <ImageView
+                    android:id="@+id/camera_icon"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:scaleType="fitXY"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/evamerc_camera_icon" />
+
+                <Button
+                    android:id="@+id/btnCcapture"
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/camera_icon"
+                    android:textColorHint="@color/dark"
+                    android:background="@android:color/transparent"
+                    android:text="Agregar fotografía."
+                    android:textColor="@color/main_dark"
+                    android:textSize="12dp" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <ImageView
+                    android:id="@+id/ubicacion_app"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:scaleType="fitXY"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/evamerc_ubicacion_app" />
+
+                <TextView
+                    android:id="@+id/Cdirecciongps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:layout_toRightOf="@+id/ubicacion_app"
+                    android:gravity="center_horizontal"
+                    android:text=""
+                    android:textSize="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textAlignment="center" />
+                <TextView
+                    android:id="@+id/coordenadas"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="2dp"
+                    android:layout_below="@+id/Cdirecciongps"
+                    android:gravity="center_horizontal"
+                    android:text=""
+                    android:textSize="10dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textAlignment="center" />
+
+            </RelativeLayout>
+
+
+            <!--Button
+                android:id="@+id/sent"
+                android:layout_width="341dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="#000"
+                android:text="Enviar"
+                android:textColor="#F8F3F3" /-->
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:paddingTop="20dp"
+            android:paddingLeft="30dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="20dp"
+            android:layout_marginBottom="20dp">
+
+            <Button
+                android:id="@+id/btnSent"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:text="Guardar"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:background="@drawable/round_button"
+                style="?android:attr/borderlessButtonStyle" />
+
+            <Button
+                android:id="@+id/Cnuevo"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:text="Nuevo"
+                android:textAllCaps="false"
+                android:textColor="#fff"
+                android:textSize="20dp"
+                android:background="@drawable/round_button_light"
+                style="?android:attr/borderlessButtonStyle" />
+        </RelativeLayout>
+        <ImageView
+            android:id="@+id/imgCFoto"
+            android:layout_width="match_parent"
+            android:layout_height="900dp"
+            android:visibility="gone"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
+    </LinearLayout>
+</ScrollView>

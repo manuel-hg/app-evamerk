@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ui.home.HomeFragment"
+    android:background="@drawable/evamerc_background_welcome_app"
+    android:scaleType="fitCenter"
+    android:screenOrientation="portrait"
+    android:gravity="bottom">
+
+    <ImageView
+        android:id="@+id/profilePic"
+        android:layout_width="224dp"
+        android:layout_height="187dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="100dp"
+        android:src="@drawable/usuario_test_evamerc" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvN"
+        android:text="Bienvenido"
+        android:textColor="#fff"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvName"
+        android:text=""
+        android:textColor="#fff"
+        android:textSize="30sp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvfecha"
+        android:text=""
+        android:textColor="#fff"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:layout_marginBottom="80dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="149dp"
+        android:layout_gravity="bottom"
+        android:background="#469eb2"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="30dp"
+        android:paddingBottom="30dp">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="Logo"
+            android:scaleType="fitCenter"
+            android:src="@drawable/evamerc_logo_white_app" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

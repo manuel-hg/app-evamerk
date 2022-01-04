@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:screenOrientation="portrait"
+    android:background="#fff"
+    tools:context=".ui.comparacion.ComparacionFragment"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        >
+        <LinearLayout
+            android:background="@android:color/transparent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:gravity="center"
+                android:paddingBottom="10px"
+                android:text="Comparacion de productos"
+                android:textAlignment="center" /-->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/dark"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_line"
+                android:paddingBottom="15dp">
+                <TextView
+                    android:id="@+id/product_namex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:text="Nuestro producto"
+                    android:textSize="20sp"
+                    android:textColor="@color/dark" />
+
+                <RelativeLayout
+                    android:id="@+id/barcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="40dp">
+
+                    <!-- IMAGE TO REPLACE BARCODE SCAN BUTTON -->
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="fill_parent"
+                        android:layout_height="195dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:src="@drawable/evamerc_camera_icon"
+                        android:visibility="gone" />
+
+                    <ImageView
+                        android:id="@+id/btnLeerCCodigo"
+                        android:layout_width="fill_parent"
+                        android:layout_height="195dp"
+                        android:src="@drawable/evamerc_barras_full"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true" />
+
+                    <TextView
+                        android:id="@+id/result"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="150dp"
+                        android:layout_marginBottom="0dp"
+                        android:gravity="center"
+                        android:text="Activar escaner."
+                        android:textSize="12dp"
+                        tools:layout_editor_absoluteX="66dp"
+                        tools:layout_editor_absoluteY="132dp" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/product_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/barcode"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"
+                    android:text="Producto:"
+                    android:textSize="20sp"
+                    android:textColor="@color/dark" />
+
+                <RelativeLayout
+                    android:id="@+id/code1"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/product_name"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/rounded_border_lgray"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="2dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="2dp">
+
+                    <TextView
+                        android:id="@+id/textView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="3dp"
+                        android:gravity="center_vertical"
+                        android:text="Código:"
+                        android:textColor="@color/dark"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/eCodigo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="10dp"
+                        android:layout_toRightOf="@+id/textView1"
+                        android:background="@null"
+                        android:gravity="right"
+                        android:hint="000000000"
+                        android:inputType="number"
+                        android:textColor="@color/main"
+                        android:textSize="12sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/price1"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/product_name"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="61dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/rounded_border_lgray"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="2dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="2dp">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="center_vertical"
+                        android:text="Precio:"
+                        android:textColor="@color/dark"
+                        android:textSize="15sp" />
+
+                    <EditText
+                        android:id="@+id/eCPprecio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_toRightOf="@+id/textView2"
+                        android:background="@null"
+                        android:gravity="right"
+                        android:hint="$0.00"
+                        android:inputType="numberDecimal"
+                        android:textColor="@color/main"
+                        android:textSize="15sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/store1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/code1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_border_lgray"
+                    android:paddingLeft="8dp"
+                    android:paddingTop="2dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="2dp">
+
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:gravity="center_vertical"
+                        android:text="Tienda:"
+                        android:textColor="@color/dark"
+                        android:textSize="15sp" />
+
+                    <Spinner
+                        android:id="@+id/lista_tiendas_C"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentTop="true"
+                        android:gravity="center"
+                        android:textColor="@color/main"
+                        android:textSize="15sp"/>
+                </RelativeLayout>
+
+            </RelativeLayout>
+            <TextView
+                android:id="@+id/product_namezs"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Producto a comparar"
+                android:layout_gravity="center"
+                android:textColor="@color/dark"
+                android:textSize="20sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:background="#f8f8f8"
+                android:paddingBottom="15dp"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:id="@+id/compareBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="40dp">
+
+                    <!-- IMAGE TO REPLACE BARCODE SCAN BUTTON -->
+                    <ImageView
+                        android:id="@+id/comparePic"
+                        android:layout_width="fill_parent"
+                        android:layout_height="195dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:src="@drawable/evamerc_camera_icon"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_borderless"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp">
+
+                    <TextView
+                        android:id="@+id/viewText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Sku de producto"
+                        android:textColor="@color/dark"
+                        android:textSize="15dp" />
+
+                    <EditText
+                        android:id="@+id/Csku"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="5dp"
+                        android:background="@null"
+                        android:layout_toLeftOf="@+id/img1"
+                        android:hint="0"
+                        android:inputType="number"
+                        android:textColorHint="@color/dark"
+                        android:textSize="15dp" />
+
+                    <ImageView
+                        android:id="@+id/img1"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/evamerc_edit_icon" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:background="@drawable/rounded_borderless">
+
+                    <EditText
+                        android:id="@+id/Cmarca"
+                        android:layout_width="fill_parent"
+                        android:layout_height="35dp"
+                        android:layout_toLeftOf="@+id/img6"
+                        android:hint="Marca"
+                        android:background="@null"
+                        android:inputType="text"
+                        android:textColorHint="@color/dark"
+                        android:textSize="15dp" />
+
+                    <ImageView
+                        android:id="@+id/img6"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/evamerc_edit_icon" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:background="@drawable/rounded_borderless">
+
+                    <EditText
+                        android:id="@+id/Cmodelo"
+                        android:layout_width="fill_parent"
+                        android:layout_height="35dp"
+                        android:hint="Modelo"
+                        android:background="@null"
+                        android:inputType="text"
+                        android:textColorHint="@color/dark"
+                        android:textSize="15dp" />
+
+                    <ImageView
+                        android:id="@+id/im6"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/evamerc_edit_icon" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="10dp"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:background="@drawable/rounded_borderless">
+
+                    <EditText
+                        android:id="@+id/CComentario"
+                        android:layout_width="fill_parent"
+                        android:layout_height="35dp"
+                        android:hint="Descripcion"
+                        android:background="@null"
+                        android:inputType="text"
+                        android:textColorHint="@color/dark"
+                        android:textSize="15dp" />
+
+                    <ImageView
+                        android:id="@+id/imx"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/evamerc_edit_icon" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rounded_borderless">
+
+                    <TextView
+                        android:id="@+id/viewText5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Precio"
+                        android:textColor="@color/dark"
+                        android:textSize="15dp"
+                        />
+
+                    <EditText
+                        android:id="@+id/Cprecio"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="$0.00"
+                        android:background="@null"
+                        android:layout_toLeftOf="@+id/img5"
+                        android:layout_marginRight="5dp"
+                        android:inputType="numberDecimal"
+                        android:textSize="15dp"
+                        android:textColorHint="@color/dark" />
+
+                    <ImageView
+                        android:id="@+id/img5"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_alignParentRight="true"
+                        android:scaleType="fitXY"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/evamerc_edit_icon" />
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:layout_marginTop="20dp">
+
+                    <ImageView
+                        android:id="@+id/camera_icon"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:scaleType="fitXY"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/evamerc_camera_icon" />
+
+                    <Button
+                        android:id="@+id/btCap"
+                        android:layout_width="wrap_content"
+                        android:layout_height="34dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/camera_icon"
+                        android:textColorHint="@color/dark"
+                        android:background="@android:color/transparent"
+                        android:text="Agregar evidencia"
+                        android:textColor="@color/main_dark"
+                        android:textSize="12dp" />
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
+
+                    <ImageView
+                        android:id="@+id/ubicacion_app"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_centerVertical="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/evamerc_ubicacion_app" />
+
+                    <TextView
+                        android:id="@+id/Cdirecciongps"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="2dp"
+                        android:layout_toRightOf="@+id/ubicacion_app"
+                        android:gravity="center_horizontal"
+                        android:text=""
+                        android:textSize="10dp"
+                        android:textColor="@color/colorPrimary"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:id="@+id/coordenadas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/Cdirecciongps"
+                        android:layout_marginBottom="2dp"
+                        android:gravity="center_horizontal"
+                        android:text=""
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="10dp" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:layout_marginBottom="20dp">
+
+                <Button
+                    android:id="@+id/btnCsent"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="20dp"
+                    android:text="Guardar"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp"
+                    android:background="@drawable/round_button"
+                    style="?android:attr/borderlessButtonStyle" />
+
+                <Button
+                    android:id="@+id/bcnuevo"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/round_button_light"
+                    android:text="Nuevo"
+                    android:textAllCaps="false"
+                    android:textColor="#fff"
+                    android:textSize="20sp" />
+
+            </RelativeLayout>
+            <ImageView
+                android:id="@+id/imgCphoto"
+                android:layout_width="match_parent"
+                android:layout_height="900dp"
+                android:visibility="gone"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
